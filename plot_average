@@ -1,0 +1,29 @@
+# This gnuplot script plots results from average.dat
+# average.dat contains 2 columns: x, avg_u
+# Plot is sent to PNG file called average.png
+# Run using gnuplot plot_average
+
+# Send output to PNG file
+set terminal png  enhanced
+# Set name of output file
+set output "average.png"
+
+# Set ranges and labels for axes
+set xrange [-1.0:31.0]
+set yrange [0:0.19]
+set xlabel "x"
+set ylabel "u_{mean}"
+
+# Set linestyle 1 as blue
+set style line 1 \
+    linecolor rgb '#0060ad' \
+    linetype 1 linewidth 0.25 \
+    pointtype 7 pointsize 0.5
+
+# Enforce aspect ratio of 1
+set size square
+
+# Plot data
+plot "average.dat" with linespoints linestyle 1
+
+# End of file

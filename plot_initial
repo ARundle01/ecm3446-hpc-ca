@@ -1,0 +1,17 @@
+
+# This gnuplot script plots results found in initial.dat
+
+set terminal png enhanced
+
+set output "initial.png"
+
+set xrange [0:30.0]
+set yrange [0:30.0]
+set xlabel "x"
+set ylabel "y"
+
+set size square
+
+set cbrange [0:1]
+
+plot "initial.dat" with image
